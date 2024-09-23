@@ -14,7 +14,7 @@ else:
     if age >= 18:
         over18 = True
 
-print("You are ",age," years old")
+print("You are (age) years old")
 if over18 == True:
     print("You are old enough to drink!")
 else:
