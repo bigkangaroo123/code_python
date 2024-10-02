@@ -4,7 +4,7 @@ def mean(nums):
     mean = sum_of_nums / a
     return mean
 
-def median(nums)
+def median(nums):
     a = sum(nums) - 1
     median = a / 2
     return nums[median]
