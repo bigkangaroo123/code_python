@@ -41,7 +41,6 @@ if target not in names:
     print("No such name found")
 else:
     index = bin_search(names, target)
-
-print(f"The gymnast you're looking for has a score of {scores[index]}")
+    print(f"The gymnast you're looking for has a score of {scores[index]}")
 
     
