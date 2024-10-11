@@ -6,4 +6,4 @@ while N > 0:
     #end
 print(x)
 
-#program adds all the remainders of N divided by 10, reducing the value by N/ 10 each time
+#program adds all the digits that make the number N
