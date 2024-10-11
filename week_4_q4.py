@@ -1,6 +1,6 @@
 def bubbleSort(roomnums):
     swapped = True
-    
+    #memorize ts
     while swapped:
         swapped = False
         for i in range(1, len(roomnums)):
