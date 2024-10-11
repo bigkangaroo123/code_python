@@ -7,3 +7,4 @@ while N > 0:
 print(x)
 
 #program adds all the digits that make the number N
+#By dividing by 10 and getting the remainder, it kinda exculdes the ones digit and adds it to x 
