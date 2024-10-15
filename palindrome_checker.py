@@ -1,4 +1,4 @@
-def palindrome_checker(word):
+def palindrome_checker(word) -> bool: #its like hinting what the function returns - doesnt mean anything tho
     word = word.lower()
     return word == word[::-1] #return true or false
 
