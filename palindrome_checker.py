@@ -1,6 +1,6 @@
 def palindrome_checker(word):
     word = word.lower()
-    return word == word[::-1]
+    return word == word[::-1] #return true or false
 
 a = input("Enter a word: ")
 is_palindrome = palindrome_checker(a)
