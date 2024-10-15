@@ -20,7 +20,7 @@
     else:
         return mid (as it will be the target)
 '''
-def bin_search(array, target):
+def binary_search(array, target):
     left = 0
     right = len(names) - 1
 
