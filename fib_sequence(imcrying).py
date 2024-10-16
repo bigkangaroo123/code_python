@@ -11,3 +11,15 @@ def fib(num):
     return helper(num)
 
 print(f"{fib(10)}")
+
+#WAY FUCKING EASIER WITHOUT A DICTIONARY:
+'''
+def fib(i): #takes in an index
+    if i == 0 or i == 1:
+        return i
+    else:
+        return fib(i-2) + fib(i-1)
+
+num = int(input("Enter a positive integer: "))
+print(f"{fib(num)}")
+'''
