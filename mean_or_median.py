@@ -1,13 +1,14 @@
 def mean(nums):
-    sum_of_nums = sum(nums)
-    a = len(nums)
-    mean = sum_of_nums / a
-    return mean
+    return sum(nums) / len(nums)
 
 def median(nums):
-    a = sum(nums) - 1
-    median = a / 2
-    return nums[median]
+    nums = sorted(nums)
+    if len(nums) / 2 >= 1:
+        return nums[len(nums / 2)]
+    else:
+        middle1 = nums[len(nums) / 2 - 1]
+        middle2 = nums[len(nums) / 2]
+        return (middle1 + middle2) / 2
 
 print("Enter numbers: (enter X to stop)")
 nums = []
