@@ -18,7 +18,5 @@ for i in range(10):
     data.append(num)
 
 final = odd_and_even(data)
-a = final[0]
-b = final[1]
-print(a)
-print(b)
+print(final[0])
+print(final[1])
