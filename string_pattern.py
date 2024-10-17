@@ -16,5 +16,5 @@ def pattern(num):
     #its not mandatory to have return statements
 
 a = int(input("Enter an integer that is >1: "))
-b = pattern(5)
+b = pattern(a)
 print(b)
