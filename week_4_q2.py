@@ -21,6 +21,7 @@
         return mid (as it will be the target)
 '''
 def binary_search(array, target):
+    #needs to be sorted btw, this array is already sorted so np
     left = 0
     right = len(names) - 1
 
@@ -40,7 +41,7 @@ index = 0
 if target not in names:
     print("No such name found")
 else:
-    index = bin_search(names, target)
+    index = binary_search(names, target)
     print(f"The gymnast you're looking for has a score of {scores[index]}")
 
     
