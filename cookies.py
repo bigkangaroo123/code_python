@@ -1,11 +1,6 @@
-import math
-
 money = float(input("How much money do you have right now?: $"))
-n = input("How many normal cookies sold?: ")
-b = input("How many big cookies sold?: ")
-
-n_cookies = len(n)
-b_cookies = len(b)
+n_cookies = int (input("How many normal cookies sold?: "))
+b_cookies = int(input("How many big cookies sold?: "))
 
 total_cookies = n_cookies + b_cookies
 cost_cookies = n_cookies * 0.50 + b_cookies * 0.75
