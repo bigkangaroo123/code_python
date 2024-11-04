@@ -9,10 +9,16 @@ board = [
     [1,2,0,0,0,7,4,0,0],
     [0,4,9,2,0,6,0,0,7]
 ]
+
 '''
-This Sudoku-solving algorithm has a time complexity of O(9^(n*n)) in Big-O notation, 
-where n represents the size of the board's dimension (typically 9 for a standard Sudoku board).
+Description: Recursively solves the Sudoku board using backtracking.
+
+Parameters:
+bo (list of lists): 2D list representing the Sudoku board.
+
+Return: Boolean values - True if solved; False if no solution.
 '''
+
 def solve(bo):
     find = find_empty(bo)
     if not find:
@@ -30,7 +36,16 @@ def solve(bo):
             bo[row][col] = 0
 
     return False
+'''
+Description: Checks if num can be placed at pos without violating Sudoku rules.
 
+Parameters:
+bo: list representing the Sudoku board.
+num: the number to validate
+pos: (row, col) position to validate.
+
+Returns: True if valid; False if invalid.
+'''
 
 def valid(bo, num, pos):
     # Check row
@@ -54,7 +69,14 @@ def valid(bo, num, pos):
 
     return True
 
+'''
+Description: Prints the Sudoku board in a formatted style.
 
+Parameters:
+bo: list representing the Sudoku board.
+
+Returns: None
+'''
 def print_board(bo):
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
@@ -69,6 +91,15 @@ def print_board(bo):
             else:
                 print(str(bo[i][j]) + " ", end="")
 
+'''
+Description: Finds the first empty cell (0) on the board.
+
+Parameters:
+bo: list representing the Sudoku board.
+
+Returns:
+tuple or None: (row, col) of the first empty cell, or None if none exist.
+'''
 
 def find_empty(bo):
     for i in range(len(bo)):
@@ -80,6 +111,7 @@ def find_empty(bo):
 
 print_board(board)
 solve(board)
-print("-----------------------")
+print("")
 print("Solution: ")
+print("")
 print_board(board)
