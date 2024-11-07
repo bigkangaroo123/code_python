@@ -1,26 +1,18 @@
-#input #1: how many minutes u have? (from 0 to 100,000)
-#input #2: how many chores? (from 0 to 100)
-    #input(s): how many minutes for each chore
+time = int(input())
+chores = int(input())
+chores_time = []
+for i in range(chores):
+    t = int(input())
+    chores_time.append(t)
 
-t = int(input("how many minutes u have?: "))
-c = int(input("how many chores u have to do?: "))
-m = []
-print("how many minutes for each chore?: ")
-for i in range(c):
-    temp = int(input())
-    m.append(temp)
-
-m.sort() #from least to greatest which gives the most amt of chores done
-time_spent = 0
-result = 0
-for time in m:
-    if time + time_spent <= t:
-        time_spent += time
-        result += 1
-    else:  
+chores_time = sorted(chores_time)
+sum_time = 0
+counter = 0
+for i in chores_time:
+    if sum_time + i > time:
         break
+    sum_time += i
+    counter += 1
     
-print(result)
-        
-        
-            
+
+print(counter)
