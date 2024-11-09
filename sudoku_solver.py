@@ -1,5 +1,5 @@
 board = [
-    [7,8,0,4,0,0,1,2,0],
+    [7,8,0,4,0,0,1,2,0],   
     [6,0,0,0,7,5,0,0,9],
     [0,0,0,6,0,1,0,7,8],
     [0,0,7,0,4,0,2,6,0],
@@ -19,14 +19,14 @@ bo (list of lists): 2D list representing the Sudoku board.
 Return: Boolean values - True if solved; False if no solution.
 '''
 
-def solve(bo):
-    find = find_empty(bo)
+def solve(bo) -> bool:
+    find = find_empty(bo) #find = (i, j) -> (row #, col #)
     if not find:
         return True
     else:
         row, col = find
 
-    for i in range(1,10):
+    for i in range(1,10): 
         if valid(bo, i, (row, col)):
             bo[row][col] = i
 
@@ -47,15 +47,15 @@ pos: (row, col) position to validate.
 Returns: True if valid; False if invalid.
 '''
 
-def valid(bo, num, pos):
+def valid(bo, num, pos) -> bool: #example: num = 2 and pos = (3, 5) -> (row, column)
     # Check row
-    for i in range(len(bo[0])):
-        if bo[pos[0]][i] == num and pos[1] != i:
+    for i in range(len(bo[0])): 
+        if bo[pos[0]][i] == num:
             return False
 
     # Check column
-    for i in range(len(bo)):
-        if bo[i][pos[1]] == num and pos[0] != i:
+    for i in range(len(bo)): 
+        if bo[i][pos[1]] == num:
             return False
 
     # Check box
@@ -89,7 +89,7 @@ def print_board(bo):
             if j == 8:
                 print(bo[i][j])
             else:
-                print(str(bo[i][j]) + " ", end="")
+                print(str(bo[i][j]) + " ", end="") #end"" is done to prevent a newline character because we continue printing the rows
 
 '''
 Description: Finds the first empty cell (0) on the board.
@@ -101,7 +101,7 @@ Returns:
 tuple or None: (row, col) of the first empty cell, or None if none exist.
 '''
 
-def find_empty(bo):
+def find_empty(bo) -> tuple:
     for i in range(len(bo)):
         for j in range(len(bo[0])):
             if bo[i][j] == 0:
