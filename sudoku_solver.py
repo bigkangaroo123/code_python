@@ -63,11 +63,12 @@ def valid(bo, num, pos) -> bool: #example: num = 2 and pos = (3, 5) -> (row, col
     box_x = pos[1] // 3 #column  5 // 3 = 1
     box_y = pos[0] // 3 #row  3 // 3 = 1
 
-    for i in range(box_y*3, box_y*3 + 3):  #(3, 6)   example: i = 4
-        for j in range(box_x * 3, box_x*3 + 3): #(3, 6) example: j = 5
+    for i in range(box_y*3, box_y*3 + 3):  #(3, 6)   example: i = 4      list 
+        for j in range(box_x * 3, box_x*3 + 3): #(3, 6) example: j = 5      index in the list
             if bo[i][j] == num: 
                 return False
-
+#bo[3][3]
+#bo[6][6]
     return True
 
 '''
@@ -103,10 +104,10 @@ tuple or None: (row, col) of the first empty cell, or None if none exist.
 '''
 
 def find_empty(bo) -> tuple:
-    for i in range(len(bo)): #i = 4
-        for j in range(len(bo[0])): #j = 5
+    for i in range(len(bo)): 
+        for j in range(len(bo[0])): 
             if bo[i][j] == 0:
-                return (i, j)  # row, col
+                return (i, j) #returns the row and column index
 
     return None
 
