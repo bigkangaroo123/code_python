@@ -9,7 +9,7 @@ def selectionsort(array, result=[]):
                 smallest = array[i]
                 s_index = i
                 
-        result.append(array.pop(s_index))
+        result.append(array.pop(s_index)) #basically, repeat until len(array) = 0 and then returning result
 
         return selectionsort(array, result)
 
