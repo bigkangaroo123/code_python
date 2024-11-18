@@ -1,0 +1,38 @@
+# n is # of character
+# c is # of consonants
+# v is # of vowels
+
+def c_counter(word, c, consonants) -> bool:
+    counter = 0
+    for i in word:
+        if i in consonants:
+            counter += 1
+            if counter > c:
+                return False
+        else:
+            counter = 0
+    return True
+
+def v_counter(word, v, vowels):
+    counter = 0
+    for i in word:
+        if i in vowels:
+            counter += 1
+            if counter > v:
+                return False
+        else:
+            counter = 0
+    return True
+
+n, c, v = map(int, input().split())
+word = input()
+vowels = set("aeiouy")
+consonants = set(chr(i) for i in range(97, 123)) - vowels
+
+if n == 1:
+    print("YES")
+elif c_counter(word, c, consonants) and v_counter(word, v, vowels):
+    print("YES")
+else:
+    print("NO")
+        
