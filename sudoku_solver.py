@@ -67,8 +67,7 @@ def valid(bo, num, pos) -> bool: #example: num = 2 and pos = (3, 5) -> (row, col
         for j in range(box_x * 3, box_x*3 + 3): #(3, 6) example: j = 5      index in the list
             if bo[i][j] == num: 
                 return False
-#bo[3][3]
-#bo[6][6]
+
     return True
 
 '''
