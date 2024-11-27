@@ -8,6 +8,7 @@ def linear_search(array, target):
     return f"target not found in the array"
 
 def binary_search(array, target):
+    array = sorted(array)
     left = 0
     right = len(array) - 1
     while left <= right:
@@ -34,8 +35,8 @@ def bubble_sort(array):
                 sorted = True
     return array
 
-def insertion_sort(array):
-    i = 0
+def insertion_sort(array): #array is [6, 8, 3, 4]
+    i = 1
     while i < len(array):
         j = i
         while j > 0 and array[j-1] > array[j]:
@@ -56,5 +57,5 @@ def selection_sort(array, sorted=[]):
         return selection_sort(array, sorted)
     
 test = [5, 9, 3, 7, 6, 4, 8, 0, 2, 1]
-print(selection_sort(test))
+print(binary_search(test, 8))
 
