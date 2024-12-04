@@ -14,13 +14,15 @@ class Monster:
         if other_monster.hp > 0:
             other_monster.hp -= self.dmg
         else:
-            print("its dead, stop bm-ing")
+            return f"{other_monster} is dead"
 
 #end of class Monster
 
-m1 = Monster("Megatron")
-m2 = Monster("ur mom")
-print(m1.info())
+m1 = Monster("Alphatron")
+m2 = Monster("Sigmatron")
+
+
+ print(m1.info())
 print(m2.info())
 m1.attack(m2)
 print(m2.info())
