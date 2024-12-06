@@ -16,7 +16,6 @@ def palindrome(word) -> bool:
     else:
         return False
 
-
 def twentyqs(start=1, end=100, q_count=0):
     if start > end:
         return "i admit defeat"
