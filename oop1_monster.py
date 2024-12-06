@@ -21,8 +21,7 @@ class Monster:
 m1 = Monster("Alphatron")
 m2 = Monster("Sigmatron")
 
-
- print(m1.info())
+print(m1.info())
 print(m2.info())
 m1.attack(m2)
-print(m2.info())
+print(m2.info())         
