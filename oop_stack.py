@@ -1,37 +1,49 @@
 class Stack:
-    def __init__(self, storage):
-        self.storage = storage
-        self.length = len(self.storage)
-        self.IsEmpty = None
-        if self.length == 0:
-            self.IsEmpty = True
-        else:
-            self.IsEmpty = False
+    def __init__(self):
+        self.__storage = []
+        self.length = len(self.__storage)
+        self.__IsEmpty = True
 
+    @property
     def IsEmpty(self):
-        if len(self.storage) == 0:
-            return True
-        else:
-            return False
+        return self.__IsEmpty
+
+    def get_storage(self):
+        return self.__storage
 
     def push(self, item):
-        self.storage.append(item)
+        self.__storage.append(item)
         self.length += 1
+        self.__IsEmpty = False 
         
     def pop(self):
-        self.storage.pop()
-        self.length -= 1
+        if self.length > 0:
+            self.length -= 1
+
+        else:
+            raise ValueError("There are no values in storage")
+
+        if self.length == 0:
+            self.__IsEmpty == True
+        else:
+            self.__IsEmpty == False
 
     def peek(self):
-        return self.storage[-1]
+        if self.length > 0:
+            return self.__storage[-1]
+        else:
+            raise ValueError("The stack is empty")
 
-s1 = Stack(["a", "a", "a", "a"])
-s1.push("b")
-print(s1.peek())
+test = Stack()
+print(f"is the stack empty?: {test.IsEmpty}")
 
-print(s1.storage)
-        
-s1.push("z")
-print(s1.peek())
+test.push(2)
+test.push(1)
+test.push(5)
 
-print(s1.storage)
+print(f"current storage: {test.get_storage()}")
+print(test.peek())
+print(f"last value: {test.pop()}")
+print(f"is the stack empty now?: {test.IsEmpty}")
+print(f"current storage: {test.get_storage()}")
+
