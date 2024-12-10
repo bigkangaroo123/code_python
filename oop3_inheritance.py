@@ -26,7 +26,7 @@ class Dog(Animal): #Animal class is Dog class's parent
 
 #this is single inheritance because class Animal only has 1 caller
 #if it was Dog(Animal) and Cat(Animal) on 2 seperate lines, that would be multi generational inheritance
-#if it was 
+#if it was Breed(Dog, Animal) it would be multi parent inheritance
 
 a1 = Animal("Seal")
 d1 = Dog("Marshall")
