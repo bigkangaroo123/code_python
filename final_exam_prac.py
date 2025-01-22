@@ -48,6 +48,6 @@
 # print(test_list)
 # any collection can hold different types of data in a single set   
 
-set1 = {'o', 69, True, 3.14, 'o'}
-set1.add("another string test")
-print(set1)
+# set1 = {'o', 69, True, 3.14, 'o'}
+# set1.add("another string test")
+# print(set1)
