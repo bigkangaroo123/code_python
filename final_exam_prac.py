@@ -51,3 +51,6 @@
 # set1 = {'o', 69, True, 3.14, 'o'}
 # set1.add("another string test")
 # print(set1)
+
+x = 'HELLO'
+print(x[3:])
