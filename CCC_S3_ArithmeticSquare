@@ -1,0 +1,42 @@
+def solve_arithmetic_square(grid):
+    changed = True
+    while changed:
+        changed = False  # Track if we make any changes
+
+        # Solve rows
+        for i in range(3):
+            if grid[i][0] is not None and grid[i][2] is not None and grid[i][1] is None:
+                grid[i][1] = (grid[i][0] + grid[i][2]) // 2
+                changed = True
+            if grid[i][1] is not None and grid[i][2] is not None and grid[i][0] is None:
+                grid[i][0] = 2 * grid[i][1] - grid[i][2]
+                changed = True
+            if grid[i][0] is not None and grid[i][1] is not None and grid[i][2] is None:
+                grid[i][2] = 2 * grid[i][1] - grid[i][0]
+                changed = True
+
+        # Solve columns
+        for i in range(3):
+            if grid[0][i] is not None and grid[2][i] is not None and grid[1][i] is None:
+                grid[1][i] = (grid[0][i] + grid[2][i]) // 2
+                changed = True
+            if grid[1][i] is not None and grid[2][i] is not None and grid[0][i] is None:
+                grid[0][i] = 2 * grid[1][i] - grid[2][i]
+                changed = True
+            if grid[0][i] is not None and grid[1][i] is not None and grid[2][i] is None:
+                grid[2][i] = 2 * grid[1][i] - grid[0][i]
+                changed = True
+
+    # Print the solved grid
+    for row in grid:
+        print(*row)
+
+
+# Input Reading
+grid = []
+for _ in range(3):
+    row = input().split()
+    grid.append([int(x) if x != "X" else None for x in row])
+
+# Solve and Output the Result
+solve_arithmetic_square(grid)

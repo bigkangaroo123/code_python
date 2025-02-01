@@ -1,0 +1,25 @@
+def flipper(commands: list):
+    grid = [1, 2, 3, 4]
+    for i in range(len(commands)):
+        if commands[i] == "H":
+            temp = grid[0]
+            grid[0] = grid[2]
+            grid[2] = temp
+
+            temp2 = grid[1]
+            grid[1] = grid[3]
+            grid[3] = temp2
+
+        elif commands[i] == "V":
+            temp = grid[0]
+            grid[0] = grid[1]
+            grid[1] = temp
+
+            temp2 = grid[2]
+            grid[2] = grid[3]
+            grid[3] = temp2
+
+    return grid
+
+inputs = list(input())
+print(flipper(inputs))
