@@ -1,23 +1,32 @@
-ongoing = True
+
+def is_monkey(word) -> bool:
+    if word == "A" or word == "":
+        return True
+    
+    if word.startswith("A") and "N" in word:
+        n_index = word.index("N")
+        return is_monkey(word[1:n_index]) and is_monkey(word[n_index+1:])
+    
+    if word.startswith("B") and word.endswith("S"):
+        return is_monkey(word[1:-1])
+
+    if "N" in word:
+        n_index = word.index("N")
+        return is_monkey(word[:n_index]) and is_monkey(word[n_index+1:])
+
+    return False
+
 words = []
-while ongoing:
-    inp = input()
+while True:
+    inp = input().strip()
     if inp == "X":
         break
     else:
         words.append(inp)
         
-def is_monkey(word): --> bool
-    if "A" not in word or "N" not in word or "S" not in word or "B" not in word:
-        return False
-    elif len(word) == 1 and (word != "S" or word != "B"):
-        return True
+for word in words:
+    if is_monkey(word):
+        print('YES')
     else:
-        for i in range(len(word))
-        
-    
-#end is is_monkey()
-        
-outputs = []
-for i in range(len(words)):
-    is words[i]
+        print('NO')
+
