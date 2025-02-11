@@ -16,3 +16,5 @@ n = int(input())
 while n:
     t = int(input())
     n -= 1
+
+    #holy shit this actyually works

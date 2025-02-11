@@ -10,10 +10,6 @@ def is_monkey(word) -> bool:
     if word.startswith("B") and word.endswith("S"):
         return is_monkey(word[1:-1])
 
-    if "N" in word:
-        n_index = word.index("N")
-        return is_monkey(word[:n_index]) and is_monkey(word[n_index+1:])
-
     return False
 
 words = []
