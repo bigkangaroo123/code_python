@@ -31,14 +31,15 @@ for _ in range(m):
 
         graph[x] = [] #creating empty lists if there are no comparisons stored for that x value in the graph
 
-    graph[x].append(y) # Add y to x's list (meaning x is taller than y)
+    graph[x].append(y)
 x, y = map(int, input().split())
 
 if can_reach(x, y, graph):
     print("yes")
-else:
+elif can_reach(y, x, graph):
     print("no")
-
+else:
+    print("unknown")
 
 """
 main function pseudocode:
