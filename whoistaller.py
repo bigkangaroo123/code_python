@@ -1,45 +1,52 @@
-# 2 ppl back to back to determine the taller one
-# the 2 height being compared cant be the same
+from collections import deque
+import sys
+input = sys.stdin.readline
 
+n, m = map(int, input().split())
+graph = [[] for _ in range(n + 1)]
+for _ in range(m):
+    x, y = map(int, input().split())
+    graph[x].append(y)
 
-def can_reach(start, target, graph):
-    queue = [start]
-    visited = set()
+x, y = map(int, input().split())
+
+def can_reach(start, target):
+    visited = [0 for _ in range(n + 1)]
+    queue = deque([start])
+    visited[start] = 1
 
     while queue:
-        node = queue.pop(0)
+        node = queue.popleft()
 
         if node == target:
             return True
-        if node in visited:
-            continue
-        visited.add(node)
-
-        if node in graph:
-            queue.extend(graph[node])
-    
+        for e in graph[node]:
+            if visited[e]:
+                continue
+            visited[e] = 1
+            queue.append(e)
     return False
 
-n, m = map(int, input().split())
-
-graph = {} #this dict. contains who is taller than who
-
-for _ in range(m):
-    x, y = map(int, input().split())
-
-    if x not in graph:
-
-        graph[x] = [] #creating empty lists if there are no comparisons stored for that x value in the graph
-
-    graph[x].append(y)
-x, y = map(int, input().split())
-
-if can_reach(x, y, graph):
+if can_reach(x, y):
     print("yes")
-elif can_reach(y, x, graph):
+elif can_reach(y, x):
     print("no")
 else:
     print("unknown")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 """
 main function pseudocode:

@@ -1,7 +1,7 @@
 numletter = {2:"ABC", 3:"DEF", 4:"GHI", 5:"JKL", 6:"MNO", 7:"PQRS", 8:"TUV", 9:"WXYZ"}
 t = int(input())
 for i in range(t):
-    nums = input().replace("-", "") #416PIZZABOX
+    nums = input().replace("-", "")
     if len(nums) > 10:
         nums = nums[:10]
     digits = []
@@ -27,3 +27,5 @@ for i in range(t):
             digits.append(int(char))
     
     print("".join(map(str, digits[:3])) + "-" + "".join(map(str, digits[3:6])) + "-" + "".join(map(str, digits[6:])))
+
+#brute force all the way
