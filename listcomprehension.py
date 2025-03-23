@@ -33,8 +33,8 @@ flattened = [i for row in matrix for i in row]
 nums = [12, 5, 18, 0, 32, 7, 11, 22, 9, 6, 28, 19, 14, 0, 17]
 catagories1 = ["Even" if i%2==0 else "Odd" for i in nums]
 catagories = {i: "Even" if i%2==0 else "Odd" for i in nums}
-print(catagories1)
-print(catagories)
+# print(catagories1)
+# print(catagories)
 
 matrix3d = [[[num for num in range(5)] for _ in range(5)] for _ in range(5)]
 # print(matrix3d)
